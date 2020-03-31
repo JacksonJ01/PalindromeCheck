@@ -1,4 +1,7 @@
 def palindrome_check(check):
+    #You should strip when you come in to make sure there are no blank spaces at the start or end
+    check = check.strip
+    
     length = int(len(check))
     print(length)
 
@@ -11,10 +14,13 @@ def palindrome_check(check):
         return False
 
     else:
-        check = check[1:]
-        check = check[:-1]
-        check.strip()
-        palindrome_check(check)
+        #check = check[1:]
+        #check = check[:-1]
+        #check.strip()
+        #palindrome_check(check)
+        
+        #You needed to return the call to the method
+        return palindrome_check(check[1:-1])
 
 
 test = 'aam n nmaa'.lower().replace(' ', '')
