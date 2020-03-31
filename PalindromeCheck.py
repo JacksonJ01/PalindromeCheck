@@ -1,44 +1,51 @@
-def palindrome_check(check):
-    #You should strip when you come in to make sure there are no blank spaces at the start or end
-    check = check.strip
-    
-    length = int(len(check))
-    print(length)
+from time import sleep
+from getpass import getuser
 
+
+def palindrome_check(check):
+    check = check.lower().replace(' ', '')
+    length = int(len(check))
     if length == 0 or length == 1:
         print("True")
-        return True
-
     elif check[0] != check[-1]:
         print("False")
-        return False
-
     else:
-        #check = check[1:]
-        #check = check[:-1]
-        #check.strip()
-        #palindrome_check(check)
-        
-        #You needed to return the call to the method
-        return palindrome_check(check[1:-1])
+        palindrome_check(check[1:-1])
 
 
-test = 'aam n nmaa'.lower().replace(' ', '')
-print(palindrome_check(test))
-# input("PRESS ENTER")
-# print("Hello there user")#
+input("PRESS ENTER")
 
-string = "Enter String"
+name = input("\nHello there user, what is your name?"
+             "\n>>>").title()
+
+print(f"""{name}, do you know what a palindrome is?
+Basically it is when a word of phrase is spelled the same forward and backwards..
+Watch, I'll show you.""")
+
+demonstrate = 0
+while demonstrate != 'radar':
+    demonstrate = input("Type the word radar"
+                        "\n>>>").lower()
+    if demonstrate == "radar":
+        print(palindrome_check(demonstrate))
+
+print("\nDo you see how I returned True?"
+      f"\nI, {getuser()}, have a program that allows you to enter a words and see if that are indeed a palindrome"
+      f"\nOkay {name}, I'm going to let you have your fun now, but first:"
+      "\nIf you want to continue and enter more text type C or 1"
+      "\nIf you want to leave type L or 2")
+
+string = "Empty"
 while string != 0:
-    cont = input("Do you want to test another string?"
+    cont = input("\nWhat do you want to do?"
+                 "\n1. Continue"
+                 "\n2. Leave"
                  "\n>>>").title()
-    if cont == 'Y' or cont == "Yes":
+    if cont == '1' or cont == "C":
         string = input("\nEnter a string please"
                        "\nNo punctuation needed"
-                       "\n>>>").lower().replace(' ', '')
-
+                       "\n>>>")
         print(palindrome_check(string))
-
-    elif cont == 'N' or cont == 'No':
-        print("Have a good day")
+    elif cont == '2' or cont == 'L':
+        print("Have a good day", name)
         string = 0
