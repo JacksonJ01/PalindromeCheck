@@ -29,14 +29,16 @@ while demonstrate != 'radar':
     if demonstrate == "radar":
         print(palindrome_check(demonstrate))
 
-print("\nDo you see how I returned True?"
-      f"\nI, {getuser()}, have a program that allows you to enter a words and see if that are indeed a palindrome"
+sleep(1)
+print("\nDo you see how I returned True?(Don't worry about the None... kinks in the system)"
+      f"\nI, {getuser()}, have a program that allows you to enter a words and see if they are indeed a palindrome"
       f"\nOkay {name}, I'm going to let you have your fun now, but first:"
       "\nIf you want to continue and enter more text type C or 1"
       "\nIf you want to leave type L or 2")
 
 string = "Empty"
 while string != 0:
+    sleep(1.5)
     cont = input("\nWhat do you want to do?"
                  "\n1. Continue"
                  "\n2. Leave"
