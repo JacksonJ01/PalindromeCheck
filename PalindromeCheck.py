@@ -1,7 +1,11 @@
+# Jackson Jared
+# 3.31.2020
+# #
 from time import sleep
 from getpass import getuser
 
 
+# This function checks if the string the user entered is a palindrome
 def palindrome_check(check):
     check = check.lower().replace(' ', '')
     length = int(len(check))
@@ -22,6 +26,7 @@ print(f"""{name}, do you know what a palindrome is?
 Basically it is when a word of phrase is spelled the same forward and backwards..
 Watch, I'll show you.""")
 
+# Demonstrates what the program will do
 demonstrate = 0
 while demonstrate != 'radar':
     demonstrate = input("Type the word radar"
@@ -47,6 +52,7 @@ while string != 0:
         string = input("\nEnter a string please"
                        "\nNo punctuation needed"
                        "\n>>>")
+        # calls the function, entering the input statement as a parameter
         print(palindrome_check(string))
     elif cont == '2' or cont == 'L':
         print("Have a good day", name)
