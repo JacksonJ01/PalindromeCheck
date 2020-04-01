@@ -9,11 +9,11 @@ def palindrome_check(check):
     check = check.lower().replace(' ', '')
     length = int(len(check))
     if length == 0 or length == 1:
-        print("True")
+        return True
     elif check[0] != check[-1]:
-        print("False")
+        return False
     else:
-        palindrome_check(check[1:-1])
+        return palindrome_check(check[1:-1])
 
 
 input("PRESS ENTER")
