@@ -1,6 +1,5 @@
 # Jackson Jared
 # 3.31.2020
-# #
 from time import sleep
 from getpass import getuser
 
